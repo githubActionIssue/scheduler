@@ -1,0 +1,44 @@
+{
+	"name": "@byojs/scheduler",
+	"description": "Throttle/debounce scheduler",
+	"version": "0.9.2",
+	"exports": {
+		"./": "./dist/scheduler.mjs"
+	},
+	"browser": {
+		"@byojs/scheduler": "./dist/scheduler.mjs"
+	},
+	"scripts": {
+		"build:all": "node scripts/build-all.js",
+		"build:gh-pages": "npm run build:all && node scripts/build-gh-pages.js",
+		"build": "npm run build:all",
+		"test:start": "npx http-server test/ -p 8080",
+		"test": "npm run test:start",
+		"postinstall": "node scripts/postinstall.js",
+		"prepublishOnly": "npm run build:all"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"micromatch": "~4.0.8",
+		"recursive-readdir-sync": "~1.0.6",
+		"terser": "~5.31.6"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/byojs/scheduler.git"
+	},
+	"keywords": [
+		"debounce",
+		"throttle",
+		"scheduling",
+		"task",
+		"async"
+	],
+	"bugs": {
+		"url": "https://github.com/byojs/scheduler/issues",
+		"email": "getify@gmail.com"
+	},
+	"homepage": "https://github.com/byojs/scheduler",
+	"author": "Kyle Simpson <getify@gmail.com>",
+	"license": "MIT"
+}
